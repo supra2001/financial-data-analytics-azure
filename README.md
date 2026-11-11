@@ -302,4 +302,4 @@ nifty50-financial-market-analytics/
 
 ---
 
-**Technologies:** Python | Pandas | NumPy | Azure Data Explorer | KQL | Matplotlib | Seaborn | Plotly | Streamlit
+**Live WebApp**: https://financialapp242001.streamlit.app/

@@ -1,0 +1,9 @@
+pandas
+azure-kusto-data
+numpy
+pyarrow
+matplotlib
+seaborn
+
+streamlit
+plotly

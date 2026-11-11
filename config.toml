@@ -1,0 +1,3 @@
+[adx]
+cluster_url = "https://kvc-whf731z7y2uqa0x7m0.northeurope.kusto.windows.net"
+database = "Financial_Data"

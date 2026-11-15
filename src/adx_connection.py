@@ -11,17 +11,19 @@ project_root = Path(__file__).resolve().parent.parent
 with open(project_root / "config.toml", "rb") as file:
     config = tomllib.load(file)
 
-cluster_url = config["adx"]["cluster_url"]
+cluster = config["adx"]["cluster"]
 database = config["adx"]["database"]
 
 
 # Establish ADX connection
-kcsb = KustoConnectionStringBuilder.with_interactive_login(cluster_url)
+kcsb = KustoConnectionStringBuilder.with_interactive_login(cluster)
 client = KustoClient(kcsb)
 
 
 # Helper function
 def run_kql(query):
-    """Execute a KQL query and return the result as a pandas DataFrame."""
-    response = client.execute(database, query)
-    return dataframe_from_result_table(response.primary_results[0])
+    try:
+        response = client.execute(database, query)
+        return dataframe_from_result_table( response.primary_results[0])
+    except Exception as e:
+        print(f"An error occurred: {e}")

@@ -4,17 +4,14 @@ import numpy as np
 import plotly.express as px
 from pathlib import Path
 
-
 # ============================================================
 # 1. PAGE CONFIGURATION
 # ============================================================
 
 st.set_page_config(
     page_title="Nifty 50 Financial Analytics",
-    page_icon="📈",
-    layout="wide"
+    # layout="wide"
 )
-
 
 # ============================================================
 # 2. LOAD DATA
@@ -85,7 +82,7 @@ AVAILABLE_STOCKS = sorted(
 # ============================================================
 
 st.sidebar.title("Dashboard Filters")
-st.sidebar.markdown("---")
+# st.sidebar.markdown("---")
 
 
 selected_stocks = st.sidebar.multiselect(
@@ -146,13 +143,10 @@ if filtered_df.empty:
 # 5. DASHBOARD HEADER
 # ============================================================
 
-st.title("Nifty 50 Financial Analytics Dashboard")
+st.title("Nifty 50 Market Intelligence")
 
 st.markdown(
     """
-    An interactive financial analytics dashboard built using
-    Python, Azure Data Explorer, Pandas and Streamlit.
-
     Explore historical stock performance, risk metrics,
     correlation and trading activity.
     """
@@ -312,7 +306,7 @@ fig_normalized = px.line(
     x="Date",
     y="Normalized_Price",
     color="Symbol",
-    title="Normalized Price Performance (Base = 100)"
+    title="Normalized Price Performance"
 )
 
 
@@ -487,4 +481,18 @@ with col2:
 # 10. FOOTER
 # ============================================================
 
-st.markdown("---")
+st.markdown(
+    """
+    <div style="
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+        color: gray;
+        font-size: 12px;
+        z-index: 999;
+    ">
+        Developed by Supratim Mukherjee
+    </div>
+    """,
+    unsafe_allow_html=True
+)

@@ -507,7 +507,8 @@ st.markdown(
     <div style="
         position: fixed;
         bottom: 10px;
-        right: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         color: gray;
         font-size: 12px;
         z-index: 999;

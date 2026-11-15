@@ -10,7 +10,7 @@ from pathlib import Path
 
 st.set_page_config(
     page_title="Nifty 50 Financial Analytics",
-    # layout="wide"
+    layout="wide"
 )
 
 # ============================================================

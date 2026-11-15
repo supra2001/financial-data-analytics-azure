@@ -137,6 +137,27 @@ if filtered_df.empty:
 
     st.warning("No data available for the selected filters.")
     st.stop()
+    
+    
+
+
+
+
+st.sidebar.markdown("---")
+st.sidebar.subheader("Dataset Information")
+
+st.sidebar.caption(f"Total Records: {len(df):,}")
+
+st.sidebar.caption(
+    f"Available Stocks: {len(AVAILABLE_STOCKS)}"
+)
+
+st.sidebar.caption(
+    f"Data Period: {min_date} to {max_date}"
+)
+
+
+
 
 
 # ============================================================
